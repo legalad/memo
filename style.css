@@ -1,0 +1,116 @@
+@import url('https://fonts.googleapis.com/css2?family=Red+Hat+Mono:wght@400;500;600;700&display=swap');
+:root{
+    --dark: #000000;
+    --primary: #e7e9eb;
+    --light: #ffffff;
+    --secondary: #ffbc4e;
+    --secondaryHov: #ffd34e;
+}
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Red Hat Mono', monospace;
+}
+body{
+    background-color: var(--dark);
+    color: var(--primary);
+    font-size: 28px;
+    font-weight: 700;
+}
+.container{
+    width: 900px;
+    margin-left: auto;
+    margin-right: auto;
+    position: center;
+    padding: 10px;
+}
+nav {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 10px;
+    border-bottom: solid 3px white;
+
+}
+
+nav ul {
+    display: flex;
+    list-style: none;
+    margin-top: 10px;
+}
+
+nav li {
+    padding-left: 15px; /* 7! */
+
+}
+nav span {
+    text-decoration: none;
+    color: var(--secondary);
+}
+nav span:hover{
+    color: var(--secondaryHov);
+    cursor: pointer;
+}
+.board{
+    margin-left: auto;
+    margin-right: auto;
+    width: 370px;
+}
+.boardS{
+    margin-left: auto;
+    margin-right: auto;
+    width: 370px;
+}
+.boardM{
+    margin-left: auto;
+    margin-right: auto;
+    width: 720px;
+    transition: all .3s ease-in-out;
+}
+.card{
+    display: inline-block;
+    width: 155px;
+    height: 155px;
+    margin: 10px;
+    border: 3px solid var(--secondary);
+    border-radius: 5px;
+    background-image: url("img/c0.png");
+    background-color: var(--light);
+    cursor: pointer;
+    filter: brightness(90%);
+    transition: all .3s ease-in-out;
+}
+.card:hover{
+    border: 3px solid var(--secondaryHov);
+    filter: brightness(100%);
+}
+.cardA{
+    display: inline-block;
+    width: 155px;
+    height: 155px;
+    margin: 10px;
+    border: 3px solid var(--secondaryHov);
+    border-radius: 5px;
+    background-image: url("img/c0.png");
+    background-color: var(--light);
+    cursor: default;
+    filter: brightness(100%);
+    transition: all .3s ease-in-out;
+}
+.category{
+    display: flex;
+    color: white;
+    font-size: 18px;
+    justify-content: space-between;
+    padding:20px 20px;
+    border-bottom: solid 3px white;
+}
+.difficulty:hover{
+    color: var(--secondary);
+    cursor: pointer;
+}
+@media (max-width: 900px) {
+    .container{
+        width: 100%;
+    }
+}

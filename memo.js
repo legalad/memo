@@ -132,7 +132,9 @@ function hideCards(c1, c2){
     $('#c'+c2).css('opacity', 0);
 
     if (--pairsLeft == 0){
+
         $('.board').html('<h1>You win!</h1>');
+        $('.boardM').html('<h1>You win!</h1>');
     }
     lockCards = false;
 }

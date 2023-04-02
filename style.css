@@ -109,6 +109,12 @@ nav span:hover{
     color: var(--secondary);
     cursor: pointer;
 }
+
+.theme:hover{
+    color: var(--secondary);
+    cursor: pointer;
+}
+
 .score{
     width: 30%;
     margin-left: auto;

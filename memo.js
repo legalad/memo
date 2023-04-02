@@ -1,5 +1,9 @@
 var cards = ["c1.png", "c2.png", "c3.png", "c4.png", "c5.png", "c6.png", "c7.png","c8.png","c9.png","c10.png","c11.png","c12.png","c13.png","c14.png","c15.png","c16.png","c17.png","c18.png","c19.png","c20.png"];
+var cards1 = ["b0.png", "b1.png", "b2.png", "b3.png", "b4.png", "b5.png", "b6.png", "b7.png", "b8.png", "b9.png"]
 var deck;
+var cardsSet = cards;
+var theme = "c";
+var diff = 0;
 const very_easy = 4;
 const easy = 6;
 const medium = 12;
@@ -14,6 +18,16 @@ $('#diff').click(function () {
     $('#category').html(very_easy_div + easy_div + medium + hard);
 });
 
+$('#theme').click(function () {
+    let theme0_div = '<div class="theme" id="th0" onclick="setTheme(0)">jobs</div>';
+    let theme1_div = '<div class="theme" id="th1" onclick="setTheme(1)">cats</div>';
+    $('#category').html(theme0_div + theme1_div);
+});
+
+$('#reset').click(function () {
+    startGame(diff)
+});
+
 
 var oneVisible = false;
 var turnCounter;
@@ -21,9 +35,20 @@ var firstCardNr;
 var lockCards = false;
 var pairsLeft;
 
-
+function setTheme(themeId){
+    if (themeId == 0){
+        cardsSet = cards;
+        theme = "c";
+    }
+    else {
+        cardsSet = cards1;
+        theme = "b";
+    }
+    startGame(diff);
+}
 
 function startGame(difficulty){
+    diff = difficulty;
     //randomizer
     deck = [];
     let i = 0;
@@ -71,7 +96,7 @@ function startGame(difficulty){
 function fillArray(difficulty){
     let i = 0;
     while (i != difficulty / 2){
-        tmp = cards[Math.floor(Math.random()*cards.length)];
+        tmp = cardsSet[Math.floor(Math.random()*cardsSet.length)];
         if(!deck.includes(tmp)){
             deck.push(tmp);
             deck.push(tmp);

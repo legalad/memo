@@ -28,4 +28,4 @@ Simple memo game in js.
 
 ## Authors
 
-- [@legalad](https://www.github.com/octokatherine)
+- [@legalad](https://www.github.com/legalad)
